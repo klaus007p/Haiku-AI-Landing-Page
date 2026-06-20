@@ -26,3 +26,11 @@ DarkTheme.addEventListener('click', () =>{
 
 
 // Feature 2: Mobile Hamburger Menu
+
+const Hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+Hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  
+});

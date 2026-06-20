@@ -1,8 +1,8 @@
 <!-- JavaScript features you can add later -->
 
 
-##Dark/Light theme toggle
-Mobile hamburger menu
+<!-- ##Dark/Light theme toggle     //Done -->
+<!-- Mobile hamburger menu         //Done -->
 Smooth scrolling
 Active navbar highlighting
 Animated counters

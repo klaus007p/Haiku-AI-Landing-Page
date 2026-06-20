@@ -81,6 +81,46 @@ header{
     cursor:pointer;
 }
 
+/* hamburger */
+
+.hamburger{
+    /* width: 100%; */
+    background: transparent;
+    display: none;
+    cursor: pointer;
+    /* display: flex; */
+    justify-content: end;
+    align-items: end;
+}
+
+
+#ham-icon{
+    background-color: transparent;
+    height: 50px;
+    width: 40px;
+    
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    
+  }
+
+  .nav-links.active {
+    display: flex;
+    justify-self: end;
+    align-self: end;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+
 #theme-btn{
     background:transparent;
     border:1px solid #41597c;
