@@ -3,8 +3,8 @@
 
 <!-- ##Dark/Light theme toggle     //Done -->
 <!-- Mobile hamburger menu         //Done -->
-Smooth scrolling
-Active navbar highlighting
+<!-- Smooth scrolling              //done -->
+<!-- Active navbar highlighting    //done -->
 Animated counters
 Pricing monthly/yearly switch
 Testimonial carousel

@@ -34,3 +34,18 @@ Hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
   
 });
+
+
+// Feature 3: Active navbar highlighting
+
+const Links = document.querySelectorAll(".nav-links a");
+
+Links.forEach(link =>{
+    link.addEventListener("click", (e)=>{
+        Links.forEach(item =>{
+            item.classList.remove("active");
+        })
+        
+        link.classList.add("active");
+    })
+})
