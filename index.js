@@ -49,3 +49,42 @@ Links.forEach(link =>{
         link.classList.add("active");
     })
 })
+
+
+// Feature 4: Animated Counters
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter =>{
+    const target = parseFloat(counter.dataset.target);
+
+    let count = 0;
+
+    const updateCounter = () =>{
+        const increment = target / 500;
+
+
+        if (count < target) {
+            count += increment;
+
+            if (target < 100) {
+                counter.textContent = count.toFixed(1) + "%";
+            } else {
+                counter.textContent = Math.ceil(count);
+            }
+
+            requestAnimationFrame(updateCounter);
+        } else {
+            if (target < 100) {
+                counter.textContent = target + "%";
+            } else {
+                counter.textContent = target.toLocaleString();
+            }
+        }
+    };
+
+
+    
+    updateCounter();
+   
+});
