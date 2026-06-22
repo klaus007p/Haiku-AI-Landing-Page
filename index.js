@@ -88,3 +88,18 @@ counters.forEach(counter =>{
     updateCounter();
    
 });
+
+// Feature 5: Pricing monthly/yearly switch
+
+const cards = document.querySelectorAll(".price-card");
+
+let current = 0;
+
+cards[current].classList.add("active");
+
+setInterval(() =>{
+    cards[current].classList.remove("active");
+
+    current = (current + 1) % cards.length;
+    cards[current].classList.add("active");
+}, 2000)

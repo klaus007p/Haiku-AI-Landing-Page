@@ -5,8 +5,8 @@
 <!-- Mobile hamburger menu         //Done -->
 <!-- Smooth scrolling              //done -->
 <!-- Active navbar highlighting    //done -->
-Animated counters
-Pricing monthly/yearly switch
+<!-- Animated counters             //Done -->
+<!-- Pricing monthly/yearly switch      //Done -->
 Testimonial carousel
 FAQ accordion
 Scroll reveal animations
