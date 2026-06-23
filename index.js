@@ -103,3 +103,19 @@ setInterval(() =>{
     current = (current + 1) % cards.length;
     cards[current].classList.add("active");
 }, 2000)
+
+
+// Feature 6: Testimonial carousel feature
+
+const Testimonial = document.querySelectorAll(".testimonial")
+
+let intervals = 0;
+Testimonial[intervals].classList.add("active");
+
+setInterval(() =>{
+    Testimonial[intervals].classList.remove("active");
+
+    intervals = (intervals + 1) % Testimonial.length;
+    Testimonial[intervals].classList.add("active");
+}, 2000) //No button involved so added transformation
+

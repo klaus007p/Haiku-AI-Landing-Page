@@ -7,7 +7,7 @@
 <!-- Active navbar highlighting    //done -->
 <!-- Animated counters             //Done -->
 <!-- Pricing monthly/yearly switch      //Done -->
-Testimonial carousel
+<!-- Testimonial carousel       //Done -->
 FAQ accordion
 Scroll reveal animations
 Typewriter effect in hero
