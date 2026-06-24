@@ -119,3 +119,17 @@ setInterval(() =>{
     Testimonial[intervals].classList.add("active");
 }, 2000) //No button involved so added transformation
 
+
+
+// Feature 7 : FAQ accordion
+
+
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item =>{
+    const questions = item.querySelector('.faq-question');
+
+    questions.addEventListener("click",() =>{
+        item.classList.toggle('active')
+    })
+})
