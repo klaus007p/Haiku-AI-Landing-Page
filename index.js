@@ -133,3 +133,35 @@ faqItems.forEach(item =>{
         item.classList.toggle('active')
     })
 })
+
+// Feature 8: Scroll reveal animations
+const revealSelectors = [
+  'header',
+  '.hero',
+  '.stats',
+  '#features',
+  '#pricing',
+  '#testimonials',
+  '.faq',
+  '#cta',
+  'footer'
+];
+
+const revealTargets = revealSelectors
+  .map(selector => document.querySelector(selector))
+  .filter(Boolean);
+
+revealTargets.push(...document.querySelectorAll('.feature-card, .price-card, .testimonial, .faq-item'));
+
+revealTargets.forEach(el => el.classList.add('reveal'));
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));

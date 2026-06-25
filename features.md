@@ -7,9 +7,9 @@
 <!-- Active navbar highlighting    //done -->
 <!-- Animated counters             //Done -->
 <!-- Pricing monthly/yearly switch      //Done -->
-<!-- Testimonial carousel       //Done -->
-FAQ accordion
-Scroll reveal animations
+<!-- Testimonial carousel           //Done -->
+<!-- FAQ accordion                  //Done -->
+<!-- Scroll reveal animations       //Done -->
 Typewriter effect in hero
 Back-to-top button
 Fake analytics dashboard updates
