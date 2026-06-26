@@ -10,7 +10,7 @@
 <!-- Testimonial carousel           //Done -->
 <!-- FAQ accordion                  //Done -->
 <!-- Scroll reveal animations       //Done -->
-Typewriter effect in hero
+<!-- Typewriter effect in hero // done -->
 Back-to-top button
 Fake analytics dashboard updates
 Newsletter form validation

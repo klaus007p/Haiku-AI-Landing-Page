@@ -89,7 +89,8 @@ counters.forEach(counter =>{
    
 });
 
-// Feature 5: Pricing monthly/yearly switch
+
+// Feature 6: Pricing monthly/yearly switch
 
 const cards = document.querySelectorAll(".price-card");
 
@@ -99,7 +100,7 @@ cards[current].classList.add("active");
 
 setInterval(() =>{
     cards[current].classList.remove("active");
-
+    
     current = (current + 1) % cards.length;
     cards[current].classList.add("active");
 }, 2000)
@@ -114,7 +115,7 @@ Testimonial[intervals].classList.add("active");
 
 setInterval(() =>{
     Testimonial[intervals].classList.remove("active");
-
+    
     intervals = (intervals + 1) % Testimonial.length;
     Testimonial[intervals].classList.add("active");
 }, 2000) //No button involved so added transformation
@@ -128,7 +129,7 @@ const faqItems = document.querySelectorAll('.faq-item');
 
 faqItems.forEach(item =>{
     const questions = item.querySelector('.faq-question');
-
+    
     questions.addEventListener("click",() =>{
         item.classList.toggle('active')
     })
@@ -136,9 +137,9 @@ faqItems.forEach(item =>{
 
 // Feature 8: Scroll reveal animations
 const revealSelectors = [
-  'header',
-  '.hero',
-  '.stats',
+    'header',
+    '.hero',
+    '.stats',
   '#features',
   '#pricing',
   '#testimonials',
@@ -148,20 +149,64 @@ const revealSelectors = [
 ];
 
 const revealTargets = revealSelectors
-  .map(selector => document.querySelector(selector))
-  .filter(Boolean);
+.map(selector => document.querySelector(selector))
+.filter(Boolean);
 
 revealTargets.push(...document.querySelectorAll('.feature-card, .price-card, .testimonial, .faq-item'));
 
 revealTargets.forEach(el => el.classList.add('reveal'));
 
 const revealObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-      observer.unobserve(entry.target);
-    }
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+        }
   });
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+
+
+
+
+
+
+
+
+// Feature 5: Hero typewriter effect
+
+const typewriterText = document.querySelector('.typewriter-text');
+const typewriterWords = ['AI', 'automation', 'your ideas', 'data insights'];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const typewriter = () => {
+  const currentWord = typewriterWords[wordIndex];
+  if (isDeleting) {
+    charIndex -= 1;
+    typewriterText.textContent = currentWord.slice(0, charIndex);
+  } else {
+    charIndex += 1;
+    typewriterText.textContent = currentWord.slice(0, charIndex);
+  }
+
+  let timeout = isDeleting ? 100 : 150;
+
+  if (!isDeleting && charIndex === currentWord.length) {
+    timeout = 1200;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % typewriterWords.length;
+    timeout = 500;
+  }
+
+  setTimeout(typewriter, timeout);
+};
+
+if (typewriterText) {
+  typewriter();
+}
