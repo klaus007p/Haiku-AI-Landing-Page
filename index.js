@@ -135,7 +135,27 @@ faqItems.forEach(item =>{
     })
 })
 
-// Feature 8: Scroll reveal animations
+// Feature 8: Back-to-top button
+const backToTopBtn = document.querySelector('#back-to-top');
+
+if (backToTopBtn) {
+  const toggleBackToTop = () => {
+    if (window.scrollY > 500) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  };
+
+  window.addEventListener('scroll', toggleBackToTop);
+  toggleBackToTop();
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// Feature 9: Scroll reveal animations
 const revealSelectors = [
     'header',
     '.hero',
