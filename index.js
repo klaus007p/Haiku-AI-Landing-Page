@@ -230,3 +230,93 @@ const typewriter = () => {
 if (typewriterText) {
   typewriter();
 }
+
+
+//Feature 10:-  Fake Analytics Dashboard Updates ---
+const metricUsers = document.getElementById('metric-users');
+const metricConversions = document.getElementById('metric-conversions');
+const metricRevenue = document.getElementById('metric-revenue');
+
+function formatNumber(n){
+  return n.toLocaleString();
+}
+
+let fakeUsers = 1200;
+let fakeConversions = 24;
+let fakeRevenue = 540;
+
+function randomDelta(base, pct){
+  const change = base * (Math.random() * pct);
+  return Math.round((Math.random() > 0.5 ? 1 : -1) * change);
+}
+
+function updateFakeAnalytics(){
+  fakeUsers += Math.max(0, randomDelta(fakeUsers, 0.02));
+  fakeConversions += Math.max(0, randomDelta(fakeConversions, 0.05));
+  fakeRevenue += Math.max(0, randomDelta(fakeRevenue, 0.08));
+
+  if(metricUsers) metricUsers.textContent = formatNumber(fakeUsers);
+  if(metricConversions) metricConversions.textContent = formatNumber(fakeConversions);
+  if(metricRevenue) metricRevenue.textContent = `$${formatNumber(fakeRevenue)}`;
+}
+
+// update every 2.5s
+setInterval(updateFakeAnalytics, 2500);
+updateFakeAnalytics();
+
+
+// --- Toast Notifications ---
+const toastContainer = document.createElement('div');
+toastContainer.className = 'toast-container';
+document.body.appendChild(toastContainer);
+
+function showToast(message, timeout = 3000){
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  toastContainer.appendChild(toast);
+
+  setTimeout(()=>{
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(8px)';
+    setTimeout(()=> toast.remove(), 300);
+  }, timeout);
+}
+
+
+// --- Newsletter form validation  ---
+const newsletterForm = document.getElementById('newsletter-form');
+const newsletterEmail = document.getElementById('newsletter-email');
+
+function validateEmail(email){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+if(newsletterForm){
+  newsletterForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const email = (newsletterEmail && newsletterEmail.value || '').trim();
+    if(!email){
+      showToast('Please enter your email.');
+      return;
+    }
+
+    if(!validateEmail(email)){
+      showToast('Please enter a valid email address.');
+      return;
+    }
+
+    // simulate subscribe
+    showToast('Subscribing...');
+    setTimeout(()=>{
+      // pretend subscription succeeded
+      showToast('Subscribed! Check your inbox.');
+      newsletterForm.reset();
+      // bump a faux metric
+      fakeUsers += 1;
+      fakeConversions += 1;
+      fakeRevenue += 5;
+      updateFakeAnalytics();
+    }, 900);
+  });
+}

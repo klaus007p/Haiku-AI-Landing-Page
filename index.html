@@ -11,7 +11,7 @@
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR Session -->
     <header>
         <nav class="navbar">
             <div class="logo">HaikuAI</div>
@@ -40,7 +40,7 @@
         </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO Section-->
     <section class="hero">
         <div class="hero-content">
             <h1>Build Smarter Products With <span class="typewriter-text"></span><span class="cursor">|</span></h1>
@@ -58,12 +58,27 @@
         <div class="hero-image">
             <div class="dashboard-card">
                 <h3>Analytics Dashboard</h3>
-                <div class="chart"></div>
+                    <div class="chart">
+                        <div class="metrics">
+                            <div class="metric">
+                                <span class="metric-label">Active Users</span>
+                                <span id="metric-users" class="metric-value">0</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Conversions</span>
+                                <span id="metric-conversions" class="metric-value">0</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Revenue</span>
+                                <span id="metric-revenue" class="metric-value">$0</span>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
 
-    <!-- STATS -->
+    <!-- STATS section -->
     <section class="stats">
         <div class="stat">
             <h2 class="counter" data-target="1000000">0</h2>
@@ -86,7 +101,7 @@
         </div>
     </section>
 
-    <!-- FEATURES -->
+    <!-- FEATURES section-->
     <section id="features" class="features">
         <h2>Everything You Need</h2>
 
@@ -125,7 +140,7 @@
         </div>
     </section>
 
-    <!-- PRICING -->
+    <!-- PRICING section-->
     <section id="pricing" class="pricing">
         <h2>Simple Pricing</h2>
 
@@ -156,7 +171,7 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- TESTIMONIALS section -->
     <section id="testimonials" class="testimonials">
         <h2>What Customers Say</h2>
 
@@ -186,7 +201,7 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ section-->
     <section class="faq">
         <h2>Frequently Asked Questions</h2>
 
@@ -206,17 +221,24 @@
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA section -->
     <section id="cta" class="cta">
         <h2>Ready to Scale Your Business?</h2>
         <p>Join thousands of companies already using NexaAI.</p>
         <button class="btn-primary">Get Started Now</button>
+        <div class="newsletter">
+            <h4>Subscribe to our newsletter</h4>
+            <form id="newsletter-form">
+                <input type="email" id="newsletter-email" placeholder="Enter your email" required />
+                <button type="submit" class="btn-secondary">Subscribe</button>
+            </form>
+        </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER section-->
     <footer>
-        <h3>HaikuAI</h3>
-        <p>© 2025 All Rights Reserved.</p>
+        <h3>HaikuAI | Prabhat Pathak</h3>
+        <p>© 2026 All Rights Reserved.</p>
     </footer>
 
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
